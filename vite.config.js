@@ -24,26 +24,16 @@ function obtenerEntradas() {
     );
 }
 
-export default defineConfig({
-    appType: 'mpa',
-    base: process.env.DEPLOY_BASE_URL || '/',
-    
-    css: {
-        preprocessorOptions: {
-            less: {
-                math: 'always',
-                relativeUrls: true,
-                javascriptEnabled: true
+export default defineConfig(
+    {
+        appType: 'mpa',
+        base: process.env.DEPLOY_BASE_URL ,
+        build: {
+            minify: true,
+            rollupOptions: {
+                input: obtenerEntradas()
             }
-        }
-    },
-    
-    build: {
-        minify: true,
-        rollupOptions: {
-            input: obtenerEntradas()
-        }
-    },
+        },
     
     plugins: [
         HtmlCssPurgePlugin(),
