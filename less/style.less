@@ -1,0 +1,32 @@
+@import 'variables.less';
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: @durazno;
+    --secondary-color: @rosa;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    background: @crema;
+    color: @marron;
+    line-height: 1.6;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+@import "header.less";
+@import "hero.less";
+@import "projects.less";
+@import "contact.less";
+@import "footer.less";

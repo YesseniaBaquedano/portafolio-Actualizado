@@ -1,0 +1,47 @@
+header {
+    background: @rosa;
+    padding: @padding-md @padding-lg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid @durazno;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .logo {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: @marron;
+            font-weight: bold;
+            .transition(color);
+            font-size: 0.9rem;
+
+            &:hover {
+                color: @texto;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        padding: @padding-md @padding-xl;
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        nav a {
+            margin: 0 @padding-sm;
+            font-size: 1rem;
+        }
+    }
+}

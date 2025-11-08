@@ -1,0 +1,207 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 15px;
+    min-height: 60vh;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(170, 233, 170);
+    gap: 25px;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 50px 30px;
+        gap: 0;
+        min-height: 70vh;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 60px 40px;
+    }
+
+    .profile-section {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .profile-container {
+            position: relative;
+            width: 220px;
+            height: 220px;
+
+            @media (min-width: 768px) {
+                width: 280px;
+                height: 280px;
+            }
+
+            .profile-decoration {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: 8px solid @blanco;
+                background: @rosa;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 120%;
+                    height: 120%;
+                    border-radius: 50%;
+                    border: 3px dashed @blanco;
+                    opacity: 0.6;
+                    animation: rotate 20s linear infinite;
+                }
+
+                .perfil {
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%;
+                    border: 5px solid @blanco;
+                    object-fit: cover;
+                    z-index: 2;
+                    position: relative;
+
+                    @media (min-width: 768px) {
+                        width: 180px;
+                        height: 180px;
+                        border: 6px solid @blanco;
+                    }
+                }
+            }
+        }
+    }
+
+    .content-section {
+        flex: 1;
+        padding-left: 0;
+        max-width: 100%;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            padding-left: 40px;
+            max-width: 500px;
+        }
+
+        .speech-bubble {
+            background: @blanco;
+            padding: 20px;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: -15px;
+                transform: translateX(-50%);
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 15px 15px 15px;
+                border-color: transparent transparent @blanco transparent;
+            }
+
+            @media (min-width: 768px) {
+                padding: 30px;
+                border-radius: 30px;
+                margin-bottom: 40px;
+                font-size: 1.3rem;
+
+                &:before {
+                    left: -20px;
+                    top: 30px;
+                    transform: none;
+                    border-width: 20px 20px 20px 0;
+                    border-color: transparent @blanco transparent transparent;
+                }
+            }
+        }
+
+        .feature-cards {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            @media (min-width: 768px) {
+                gap: 15px;
+                justify-content: flex-start;
+            }
+
+            .feature-card {
+                background: @amarillo;
+                padding: 15px 10px;
+                border-radius: 15px;
+                text-align: center;
+                width: 100px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+                border: 3px solid @blanco;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                &:nth-child(2) {
+                    background: @morado;
+                }
+
+                &:nth-child(3) {
+                    background: @durazno;
+                }
+
+                @media (min-width: 768px) {
+                    padding: 20px 15px;
+                    border-radius: 20px;
+                    width: 120px;
+                }
+
+                .feature-icon {
+                    font-size: 2rem;
+                    margin-bottom: 8px;
+                    display: block;
+
+                    @media (min-width: 768px) {
+                        font-size: 2.5rem;
+                        margin-bottom: 10px;
+                    }
+                }
+
+                .feature-text {
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                    line-height: 1.2;
+
+                    @media (min-width: 768px) {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Animación para el borde circular del perfil
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

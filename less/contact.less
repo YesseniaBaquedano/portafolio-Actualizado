@@ -1,0 +1,79 @@
+.contact {
+    padding: 40px 20px;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    p {
+        margin-bottom: 15px;
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            font-weight: bold;
+
+            &:hover {
+                color: @durazno;
+            }
+        }
+
+        b {
+            color: @marron;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 400px;
+        margin: auto;
+
+        input,
+        textarea {
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid @rosa;
+            font-family: inherit;
+
+            &:focus {
+                outline: none;
+                border-color: @durazno;
+            }
+        }
+
+        button {
+            background: @durazno;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+
+            &:hover {
+                background: @marron;
+                color: @gris-claro;
+            }
+        }
+    }
+
+    .socials {
+        margin-top: 20px;
+
+        a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: inherit;
+            transition: 0.3s;
+
+            &:hover {
+                color: @durazno;
+            }
+        }
+    }
+}
